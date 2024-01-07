@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Include your CSS file here -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+
+</head>
+<body>
+<div class="menu-container">
+    <ul class="main-menu">
+        <li class="menu-item">박수택 생체 리듬 관리
+            <ul class="sub-menu">
+                <!-- Corrected class attribute placement and usage -->
+                <li><a href="/basic/items">박수택 방구 관리</a></li>
+            </ul>
+            <ul class="sub-menu">
+                <!-- Corrected class attribute placement and usage -->
+                <li><a href="/basic/items">박수택 흡연 관리</a></li>
+            </ul>
+            <ul class="sub-menu">
+                <!-- Corrected class attribute placement and usage -->
+                <li><a href="/basic/items">박수택 남사친 관리</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+body {
+    font-family: 'Bagel Fat One', system-ui;
+    background-color: #ececec;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox를 사용하여 아이템들을 중앙에 배치 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 100vh; /* 전체 화면 높이 */
+}
+
+
+
+.menu-container {
+    background-color: #ada8a8;
+    width: 900px;
+    height: 1100px;
+    border: 2px solid #ccc;
+    box-shadow: 7px 7px 15px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-image: url('https://i.ibb.co/SVn4ss0/1688046209864-waifu2x-photo-noise3.png'); /* 여기에 이미지 URL 추가 */
+    background-size: cover; /* 이미지 크기 조절 */
+    background-position: center; /* 이미지 위치 조절 */
+
+    text-align: center; /* Center-align the text horizontally */
+    font-size: 90px; /* Increase the font size */
+    line-height: 180px; /* Adjust to vertically center the text, match with your container's height */
+    color: #fcfca0;
+}
+
+.menu-container:hover {
+    transform: scale(1.05);
+}
+
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #fcfca0; /* 글씨색을 검정색으로 변경 */
+    display: block;
+    padding: 100px 100px;
+    text-align: center; /* Center-align the text horizontally */
+    transition: background-color 0.3s;
+    font-size: 90px; /* 이 값을 조정하여 글씨 크기를 변경하세요 */
+    border-bottom: 4px solid #b0acac;
+    position: relative;
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.menu-item a:hover {
+    background-color: #ffd700;
+    color: white;
+}
+
+.sub-menu {
+    list-style: none;
+    padding: 0;
+    display: none;
+    background-color: #dadada;
+    font-size: 40px; /* Reduced from 50px to make text smaller */
+}
+
+.sub-menu li a {
+    padding: 60px 30px; /* Adjusted from default to reduce height */
+    display: block;
+    text-decoration: none;
+    color: #fcfca0; /* Text color */
+    transition: background-color 0.3s;
+}
+
+.sub-menu li a:hover {
+    background-color: #f0e68c; /* Color on hover */
+}
