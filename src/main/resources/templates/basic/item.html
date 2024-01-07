@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Bagel Fat One', sans-serif;
+            font-size: 200%; /* Adjusted font size */
+            text-align: center; /* Center text */
+        }
+        .container {
+            width: 100%; /* Use full width */
+            max-width: none; /* Override Bootstrap's max-width */
+        }
+        .table {
+            width: auto; /* Set table width to fit content */
+            margin: auto; /* Center the table horizontally */
+        }
+        .big-text {
+            font-size: 300%; /* Larger text for specific elements */
+        }
+        .button-big {
+            font-size: 200%; /* Larger text for buttons */
+            padding: 10px 20px; /* Bigger button padding */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>박수택 방구 상세💩</h2>
+    </div>
+    <div>
+        <label for="itemId">방구 ID</label>
+        <input type="text" id="itemId" name="itemId" class="form-control"
+               value="1" th:value="${gas.id}" readonly>
+    </div>
+    <div>
+        <label for="itemName">방구명</label>
+        <input type="text" id="itemName" name="itemName" class="form-control"
+               value="상품A" th:value="${gas.gasName}" readonly>
+    </div>
+    <div>
+        <label for="price">유해성💀</label>
+        <input type="text" id="price" name="price" class="form-control"
+               value="10000" th:value="${gas.harmful}" readonly>
+    </div>
+    <div>
+        <label for="quantity">살포량</label>
+        <input type="text" id="quantity" name="quantity" class="form-control"
+               value="10" th:value="${gas.quantity}" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    onclick="location.href='editForm.html'"
+                    th:onclick="|location.href='@{/basic/items/{gasId}/edit(gasId=${gas.id})}'|"
+                    type="button">방구 상세 수정</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    onclick="location.href='items.html'"
+                    th:onclick="|location.href='@{/basic/items}'|"
+                    type="button">목록으로</button>
+        </div>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

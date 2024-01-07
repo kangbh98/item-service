@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <link href="../css/bootstrap.min.css"
+          th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Bagel Fat One', sans-serif;
+            font-size: 200%; /* Adjusted font size */
+            text-align: center; /* Center text */
+        }
+        .container {
+            width: 100%; /* Use full width */
+            max-width: none; /* Override Bootstrap's max-width */
+        }
+        .table {
+            width: auto; /* Set table width to fit content */
+            margin: auto; /* Center the table horizontally */
+        }
+        .big-text {
+            font-size: 300%; /* Larger text for specific elements */
+        }
+        .button-big {
+            font-size: 200%; /* Larger text for buttons */
+            padding: 10px 20px; /* Bigger button padding */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5">
+        <h2 class="big-text">박수택 방구 목록💩</h2> <!-- Larger text for the header -->
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-none button-big"
+                    onclick="location.href='addForm.html'"
+                    th:onclick="|location.href='@{/basic/items/add}'|"
+                    type="button">방구 등록</button> <!-- Larger button with increased padding -->
+        </div>
+    </div>
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>방구명</th>
+                <th>유해성💀</th>
+                <th>살포량</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="gas : ${gas}">
+                <td><a href="item.html" th:href="@{/basic/items/{gasId}(gasId=${gas.id})}" th:text="${gas.id}">방구id</a></td>
+                <td><a href="item.html" th:href="@{/basic/items/{gasId}(gasId=${gas.id})}" th:text="${gas.gasName}">방구</a></td>
+                <td th:text="${gas.harmful}">10000</td>
+                <td th:text="${gas.quantity}">10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
