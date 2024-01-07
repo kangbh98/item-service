@@ -1,12 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+
 <head>
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css"
           th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Bagel Fat One', sans-serif;
+            font-size: 250%;
+            text-align: center;
+        }
         .container {
-            max-width: 560px;
+            width: 80%; /* Adjusted width to 80% of the viewport */
+            max-width: 800px; /* Set a maximum width to the container */
+            margin: auto; /* Center the container */
+        }
+        .form-control {
+            height: 60px; /* Increased height */
+            font-size: 24px; /* Larger font size */
+            padding: 10px; /* Adjust padding as needed */
+        }
+        .table {
+            width: auto;
+            margin: auto;
+        }
+        .table th, .table td {
+            padding: 30px; /* Increased padding for more space */
+        }
+        .big-text {
+            font-size: 230%;
+        }
+        .button-big {
+            font-size: 130%;
+            padding: 10px 20px;
         }
     </style>
 </head>
@@ -14,6 +44,7 @@
 <div class="container">
     <div class="py-5 text-center">
         <h2>박수택 방구 수정 폼💩</h2>
+        <hr>
     </div>
     <form action="item.html" th:action method="post">
         <div>
@@ -22,7 +53,7 @@
                    th:value="${gas.id}" readonly>
         </div>
         <div>
-            <label for="gasName">방구명</label>
+            <label for="gasName">방구명📄</label>
             <input type="text" id="gasName" name="gasName" class="form-control" value="상품A" th:value="${gas.gasName}">
         </div>
         <div>
@@ -31,7 +62,7 @@
                    th:value="${gas.harmful}">
         </div>
         <div>
-            <label for="quantity">살포량</label>
+            <label for="quantity">살포량💨</label>
             <input type="text" id="quantity" name="quantity" class="form-control" th:value="${gas.quantity}">
         </div>
         <hr class="my-4">

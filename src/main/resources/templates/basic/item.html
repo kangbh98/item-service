@@ -12,23 +12,19 @@
     <style>
         body {
             font-family: 'Bagel Fat One', sans-serif;
-            font-size: 200%; /* Adjusted font size */
-            text-align: center; /* Center text */
+            font-size: 200%;
+            text-align: center;
         }
         .container {
-            width: 100%; /* Use full width */
-            max-width: none; /* Override Bootstrap's max-width */
+            width: 70%; /* Reduced width to 70% of the viewport */
+            max-width: 600px; /* Set a maximum width to the container */
+            margin: auto; /* Center the container */
         }
-        .table {
-            width: auto; /* Set table width to fit content */
-            margin: auto; /* Center the table horizontally */
-        }
-        .big-text {
-            font-size: 300%; /* Larger text for specific elements */
-        }
-        .button-big {
-            font-size: 200%; /* Larger text for buttons */
-            padding: 10px 20px; /* Bigger button padding */
+        /* Custom style for input fields */
+        .form-control {
+            height: 60px; /* Increased height */
+            font-size: 24px; /* Larger font size */
+            padding: 10px; /* Adjust padding as needed */
         }
     </style>
 </head>
@@ -37,13 +33,16 @@
     <div class="py-5 text-center">
         <h2>박수택 방구 상세💩</h2>
     </div>
+    <!-- 추가 -->
+    <h2 th:if="${param.status}" th:text="'저장 완료! 독한 방구를 견뎠군요!'"></h2>
+
     <div>
         <label for="itemId">방구 ID</label>
         <input type="text" id="itemId" name="itemId" class="form-control"
                value="1" th:value="${gas.id}" readonly>
     </div>
     <div>
-        <label for="itemName">방구명</label>
+        <label for="itemName">방구명📄</label>
         <input type="text" id="itemName" name="itemName" class="form-control"
                value="상품A" th:value="${gas.gasName}" readonly>
     </div>
@@ -53,7 +52,7 @@
                value="10000" th:value="${gas.harmful}" readonly>
     </div>
     <div>
-        <label for="quantity">살포량</label>
+        <label for="quantity">살포량💨</label>
         <input type="text" id="quantity" name="quantity" class="form-control"
                value="10" th:value="${gas.quantity}" readonly>
     </div>

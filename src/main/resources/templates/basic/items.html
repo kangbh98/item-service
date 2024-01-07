@@ -11,48 +11,59 @@
     <style>
         body {
             font-family: 'Bagel Fat One', sans-serif;
-            font-size: 200%; /* Adjusted font size */
-            text-align: center; /* Center text */
+            font-size: 250%;
+            text-align: center;
         }
         .container {
-            width: 100%; /* Use full width */
-            max-width: none; /* Override Bootstrap's max-width */
+            width: 100%; /* Adjusted width to 80% of the viewport */
+            max-width: 1000px; /* Set a maximum width to the container */
+            margin: auto; /* Center the container */
         }
         .table {
-            width: auto; /* Set table width to fit content */
-            margin: auto; /* Center the table horizontally */
+            width: auto;
+            margin: auto;
+        }
+        .table th, .table td {
+            padding: 30px; /* Increased padding for more space */
         }
         .big-text {
-            font-size: 300%; /* Larger text for specific elements */
+            font-size: 230%;
         }
         .button-big {
-            font-size: 200%; /* Larger text for buttons */
-            padding: 10px 20px; /* Bigger button padding */
+            font-size: 130%;
+            padding: 10px 20px;
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="py-5">
-        <h2 class="big-text">박수택 방구 목록💩</h2> <!-- Larger text for the header -->
+        <h2 class="big-text">박수택 방구 목록💩</h2>
     </div>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary float-none button-big"
-                    onclick="location.href='addForm.html'"
-                    th:onclick="|location.href='@{/basic/items/add}'|"
-                    type="button">방구 등록</button> <!-- Larger button with increased padding -->
-        </div>
+
+    <!-- Start of the new div with Bootstrap classes for right alignment -->
+    <div class="d-flex justify-content-end mb-2"> <!-- Added margin-bottom (mb-2) for spacing -->
+        <button class="btn btn-primary button-big"
+                onclick="location.href='addForm.html'"
+                th:onclick="|location.href='@{/basic/items/add}'|"
+                type="button">방구 등록</button>
     </div>
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-primary button"
+                th:onclick="|location.href='http://www.instagram.com/huoeh'|"
+                type="button">#️⃣방구쟁이 인스타 그램 확인하기</button>
+    </div>
+
     <hr class="my-4">
     <div>
         <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>방구명</th>
+                <th>방구명📄</th>
                 <th>유해성💀</th>
-                <th>살포량</th>
+                <th>살포량💨</th>
             </tr>
             </thead>
             <tbody>
